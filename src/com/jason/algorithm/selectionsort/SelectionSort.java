@@ -35,7 +35,7 @@ public class SelectionSort {
 		}
 	}
 
-	public static void insertSort(int[] arr) {
+	public static void insertSort1(int[] arr) {
 		if (arr == null || arr.length < 2) return;
 		//0 ~ 0 完成
 		//0 ~ 1
@@ -53,6 +53,22 @@ public class SelectionSort {
 		}
 	}
 
+	public static void insertSort2(int[] arr) {
+		if (arr == null || arr.length < 2) return;
+		//0 ~ 0 完成
+		//0 ~ 1
+		//0 ~ 2
+		//0 ~ 3
+		//0 ~ n-1
+		int N = arr.length;
+		for (int end = 1; end < N; end++) {
+			//pre 新数前一个位置
+			for (int pre = end - 1; pre >= 0 && arr[pre] > arr[pre + 1]; pre--) {
+				swap(arr, pre, pre + 1);
+			}
+		}
+	}
+
 	public static void printSort(int[] arr) {
 		for (int i = 0; i < arr.length; i++) {
 			System.out.print(arr[i] + " ");
@@ -65,7 +81,7 @@ public class SelectionSort {
 		printSort(arr);
 		//selectSort(arr);
 		//bubbleSort(arr);
-		insertSort(arr);
+		insertSort1(arr);
 		printSort(arr);
 	}
 }

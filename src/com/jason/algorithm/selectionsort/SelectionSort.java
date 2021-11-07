@@ -6,15 +6,8 @@ public class SelectionSort {
         if (arr == null || arr.length < 2) return;
 
         int N = arr.length;
-        //0 ~ n - 1
-        //1 ~ n - 1
-        //2 ~ n - 1
         for (int i = 0; i < N; i++) {
-            //0 ~ n - 1
-            //1 ~ n - 1
-            //2 ~ n - 1
-            //i ~ n - 1
-            int minValueIndex = i;//i
+            int minValueIndex = i;
             for (int j = i + 1; j < N; j++) {
                 minValueIndex = arr[j] < arr[minValueIndex] ? j : minValueIndex;
             }
